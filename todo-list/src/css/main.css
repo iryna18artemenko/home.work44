@@ -1,0 +1,114 @@
+body {
+  background-color: #867bcd;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.App {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.addTodos {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-input {
+  width: 250px;
+  height: 30px;
+  background-color: #e1ebfd;
+  border: none;
+  border-radius: 5px;
+}
+
+.todo-input:focus {
+  border: 2px solid #433aa4;
+}
+
+.add-btn {
+  width: 60px;
+  height: 30px;
+  margin-left: 10px;
+  background-color: #271c2c;
+  color: aliceblue;
+  border-radius: 5px;
+}
+
+.displaytodos {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.displaytodos .buttons {
+  margin-bottom: 20px;
+}
+
+.displaytodos .buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.displaytodos ul {
+  list-style: none;
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  margin-left: 5%;
+}
+
+.card {
+  width: 18rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  background: rgb(180, 182, 210);
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card textarea {
+  padding: 5px;
+  border-radius: 8px;
+  border: none;
+  background-color: #e1ebfd;
+  color: black;
+  height: 70%;
+  font-size: 18px;
+}
+
+.card textarea:disabled {
+  background-color: transparent;
+}
+
+.card .btns {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.card .btns button {
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.completed {
+  position: absolute;
+  right: 3px;
+  top: 5px;
+  border-radius: 20px;
+  background-color: #867bcd;
+  border: 2px solid black;
+  padding: 0 10px 3px;
+  color: antiquewhite;
+  font-size: 12px;
+}

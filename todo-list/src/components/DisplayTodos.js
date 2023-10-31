@@ -26,6 +26,17 @@ const mapDispatchToProps = (dispatch) => {
 const DisplayTodos = (props) => {
   const [sort, setSort] = useState("active");
 
+  const shouldItemBeShown = (statusValue, item) => {
+    switch (statusValue) {
+      case "active":
+        return !item.completed;
+      case "completed":
+        return !!item.completed;
+      default:
+        return true;
+    }
+  };
+
   return (
     <div className="displaytodos">
       <div className="buttons">
@@ -34,46 +45,20 @@ const DisplayTodos = (props) => {
         <button onClick={() => setSort("all")}>All</button>
       </div>
       <ul>
-        {props.todos.length > 0 && sort === "active"
+        {props.todos.length > 0
           ? props.todos.map((item) => {
               return (
-                item.completed === false && (
-                  <TodoItem
-                    key={item.id}
-                    item={item}
-                    removeTodo={props.removeTodo}
-                    updateTodo={props.updateTodo}
-                    completeTodo={props.completeTodo}
-                  />
+                shouldItemBeShown(sort, item) && (
+                  <>
+                    <TodoItem
+                      key={item.id}
+                      item={item}
+                      removeTodo={props.removeTodo}
+                      updateTodo={props.updateTodo}
+                      completeTodo={props.completeTodo}
+                    />
+                  </>
                 )
-              );
-            })
-          : null}
-        {props.todos.length > 0 && sort === "completed"
-          ? props.todos.map((item) => {
-              return (
-                item.completed === true && (
-                  <TodoItem
-                    key={item.id}
-                    item={item}
-                    removeTodo={props.removeTodo}
-                    updateTodo={props.updateTodo}
-                    completeTodo={props.completeTodo}
-                  />
-                )
-              );
-            })
-          : null}
-        {props.todos.length > 0 && sort === "all"
-          ? props.todos.map((item) => {
-              return (
-                <TodoItem
-                  key={item.id}
-                  item={item}
-                  removeTodo={props.removeTodo}
-                  updateTodo={props.updateTodo}
-                  completeTodo={props.completeTodo}
-                />
               );
             })
           : null}

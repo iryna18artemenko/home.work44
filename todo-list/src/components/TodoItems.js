@@ -12,9 +12,10 @@ const TodoItem = (props) => {
   };
 
   const update = (id, value, e) => {
-    if (e.wich === 13) {
+    if (e.which === 13) {
+      e.preventDefault();
       updateTodo({ id, item: value });
-      inputRef.current.disabled = false;
+      inputRef.current.disabled = true;
     }
   };
 
@@ -24,7 +25,7 @@ const TodoItem = (props) => {
         ref={inputRef}
         disabled={inputRef}
         defaultValue={item.item}
-        onKeyUpCapture={(e) => update(item.id, inputRef.current.value, e)}
+        onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
       />
       <div className="btns">
         <button style={{ color: "blue" }} onClick={() => changeFocus()}>

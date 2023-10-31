@@ -3,10 +3,9 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-
 }
 
-.header {
+h1 {
   background-color: #282c34;
   display: flex;
   flex-direction: column;
@@ -14,21 +13,5 @@
   justify-content: center;
   color: white;
   width: 100%;
+  text-shadow: 0 0 5px #433aa8;
 }
-
-.btn {
-  background-color: #282c34;
-  color: white;
-  border-radius: 10%;
-  width: 100px;
-  height: 30px;
-  margin-left: 10px;
-};
-
-
-
-
-
-
-
-

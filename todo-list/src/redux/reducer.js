@@ -21,6 +21,7 @@ const addTodoReducer = createSlice({
           return {
             ...todo,
             item: action.payload.item,
+            completed: !todo.completed,
           };
         }
         return todo;
